@@ -1,0 +1,134 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  --main-spacing: 15px 5px 10px 5px;
+  --header-footer-spacing: 10px 5px;
+}
+
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 
+    'header'
+    'main';
+}
+
+.app header, footer {
+  padding: var(--header-footer-spacing);
+  background-color: lightblue;
+}
+
+.app header {
+  grid-area: header;
+  a {
+    margin-right: 20px;
+    cursor: pointer;
+
+    &.disabled {
+      cursor: default;
+      opacity: 0.5;
+    }
+  }
+}
+
+.app main {
+  grid-area: main;
+  overflow: auto;
+
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr minmax(0, 600px) 1fr;
+}
+
+.app footer {
+  grid-area: 2 / 1 / 3 / 4;
+}
+
+.app section {
+  grid-area: 1 / 2 / 1 / 3;
+  padding: 5px 0 0 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app section * {
+  overflow: auto;
+}
+
+.app section.full {
+  grid-area: 1 / 1 / 1 / 4
+}
+
+.app ul {
+  list-style: none;
+  font-family: 'Marck Script', cursive;
+}
+
+.app a {
+  text-decoration: none;
+  color: #000;
+}
+
+.app a:active, .app a:hover {
+  color: rgb(0, 113, 206);
+}
+
+.app a li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-radius: 30px;
+  line-height: 36px;
+}
+
+.app a li:active, .app a li:hover {
+  background: lightblue;
+}
+
+.app button {
+  cursor: pointer;
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.app input[type=number] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.app .card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  max-width: 50%;
+  margin: 0 5% 5% 0;
+}
+
+.app .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.app .card .card-content {
+  padding: 2px 16px;
+}
+
+.app .card img {
+  border-radius: 5px 5px 0 0;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.app .card img {
+  border-radius: 5px 5px 0 0;
+}

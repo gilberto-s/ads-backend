@@ -1,0 +1,26 @@
+{% extends 'paes/base.html' %}
+{% block title %}Produto{% endblock %}
+{% block content %}
+  <section class="full">
+    <section><h1>Produto</h1></section>
+    <section>
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://www.redesuperbom.com.br/media/produtos/536x536/18465_barcelos_pao-tradicional_pao-frances-da-casa-kg.jpg" 
+            alt="imagem de pão"
+          >
+        </div>
+        <div class="card-content">
+          <h4>{{product.name}}</h4>
+          <p>Preço: {{product.value}}</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <label for="qtd-prod">Quantidade</label>
+      <input id="qtd-prod" min="1" type="number" required>
+      <button>Comprar</button>
+    </section>
+  </section>
+{% endblock %}
